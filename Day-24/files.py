@@ -3,4 +3,4 @@
 #     print(contents)
 
 with open(file='Day-24/new_file.txt', mode="w") as file:
-   file.write("\nNew Text")
+   file.write("\nNew Text",)

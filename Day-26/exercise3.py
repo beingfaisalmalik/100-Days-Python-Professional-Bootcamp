@@ -1,6 +1,6 @@
 with open('Day-26/file1.txt') as f:
-    content1 = [line[:-1] for line in f]
-print(content1)
+    content1 = f.readlines()
+print(content1[:-1])
 
 with open('Day-26/file2.txt') as f:
     content2 = [line[:-1] for line in f]

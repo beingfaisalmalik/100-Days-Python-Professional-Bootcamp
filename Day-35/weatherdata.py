@@ -7,8 +7,8 @@ flag = response.json()['weather']
 
 smtp_server = "smtp.gmail.com"
 port = 587  # For starttls
-sender_email = "faisalmalikff.99@gmail.com"
-password = 'kzknhrovilvqdoti'
+sender_email = "email"
+password = 'password'
 
 # Create a secure SSL context
 context = ssl.create_default_context()

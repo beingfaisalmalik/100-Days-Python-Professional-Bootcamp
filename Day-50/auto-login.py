@@ -1,0 +1,16 @@
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+driver = webdriver.Chrome()
+driver.get('https://lms.kiet.edu.pk/kietlms/login/index.php')
+element = driver.find_element(By.CSS_SELECTOR,'.accordion-toggle h2')
+element.click()
+username = driver.find_element(By.NAME,'username')
+password = driver.find_element(By.NAME,'password')
+username.send_keys('Username')
+password.send_keys('Password')
+sigin = driver.find_element(By.CSS_SELECTOR,'.accordion-inner form button')
+sigin.click()
+current_courses = driver.find_element(By.CSS_SELECTOR,'#myc input')
+current_courses.click()
+current_courses = driver.find_element(By.CSS_SELECTOR , '.d-inline')
+print(current_courses)

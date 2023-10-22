@@ -1,9 +1,48 @@
-import numpy 
-import tensorflow as tf
-a = numpy.array = [[1,2,3,4,5,6,7,8,9],[1,2,3,4,5,6,7,8,9]]
-print(numpy.shape(a))
-a = numpy.reshape(a,(18,1))
-t1 = tf.ones(shape=(3,3))
-t2 = tf.reshape(t1, shape=(1,9))
-print(t2)
-print(t1)
+
+def first_search(arr,n,k):
+    start =0
+    end = n-1
+    ans = -1
+    while(start<=end):
+        mid = int((start+end)/2)
+        if arr[mid] == k:
+            ans = mid
+            end = mid -1
+        elif arr[mid] < k:
+            start = mid +1
+        else:
+            end = mid-1
+    return ans
+
+def last_search(arr,n,k):
+    start =0
+    end = n-1
+    ans = -1
+    while(start<=end):
+        mid = int((start+end)/2)
+        if arr[mid] == k:
+            ans = mid
+            start = mid + 1
+        elif arr[mid] < k:
+            start = mid +1
+        else:
+            end = mid-1
+    return ans
+         
+def firstAndLastPosition(arr, n, k):
+    temp =[]
+    first = first_search(arr,n,k)
+    last = last_search(arr,n,k)
+    temp.append(first)
+    temp.append(last)
+    return temp
+
+    
+
+    
+arr = [1,2,2,2,2]
+k =2
+n=len(arr)
+ans = last_search(arr,n,k)
+print(ans)
+            

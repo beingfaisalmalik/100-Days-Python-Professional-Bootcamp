@@ -5,9 +5,6 @@ def decorator_hello(function):
     return wrapper
 
 
-
-
-
 def say_hello():
     print('Hello')
     

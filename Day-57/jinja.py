@@ -22,6 +22,11 @@ def guess(name):
     age = agifydic['age']
     gender = genderfydic['gender']
     return render_template('name.html',name=name,gender=gender,age=age)
+@app.route('/blog')
+def blogs():
+    blogs = requests.get('https://api.npoint.io/ba6059b67223f3755de0')
+    all_posts = blogs.json()
+    return render_template('blog.html',posts=all_posts)
     
 if __name__ == '__main__':
     app.run(debug=True)
